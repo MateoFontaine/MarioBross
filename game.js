@@ -61,7 +61,7 @@ function create(){
     .refreshBody()
 
   this.floor
-    .create(150, config.height - 16, 'floorbricks')
+    .create(170, config.height - 16, 'floorbricks')
     .setOrigin(0, 0.5)
     .refreshBody()
 
@@ -70,7 +70,7 @@ function create(){
     .setOrigin(0, 2)
     .refreshBody() 
 
-  this.mario = this.physics.add.sprite(50, 100, 'mario')
+  this.mario = this.physics.add.sprite(50, 200, 'mario')
     .setOrigin(0, 1)
     .setCollideWorldBounds(true)
     .setGravityY(300)
@@ -110,10 +110,10 @@ function update(){
     }
 
     if (this.mario.y >= config.height){
-        this.mario.isDead - true
+        this.mario.isDead - true 
         this.mario.anims.play('mario-dead')
         this.mario.setCollideWorldBounds(false)
-        this.sound.add('gameover', {volume: 0.2}).play()
+        this.sound.add('gameover', {volume: 0.02}).play()
 
         setTimeout(()=>{
             this.mario.setVelocityY(-350)
